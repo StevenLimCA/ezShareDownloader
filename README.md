@@ -12,19 +12,21 @@ To overcome these challenges, a Raspberry Pi 4 was utilized, taking advantage of
 
 The project's code and documentation can be found on this GitHub repository, providing a comprehensive solution for wireless recording and file management.
 
-## Key Learnings
+## Key Learnings & Limitations
 
-Throughout the development of this project, several valuable insights were gained:
+During the development and usage of the code and the ezShare SDHC card, several key learnings and limitations have been identified. These provide important insights and considerations when working with the card and implementing the code. Here are the key learnings and limitations:
 
-- Understanding the limitations and capabilities of different wireless SDHC cards
+Limitation: Lack of HTTP POST Route: The ezShare card does not offer an HTTP POST route, which means that the code in its current form cannot directly upload files to the card. It is limited to downloading files from the card only.
 
-- Leveraging a Raspberry Pi for network connectivity and file synchronization
+Limitation: Interference with Audio Recording Devices: The ezShare Wifi SDHC card may cause interference when inserted into certain audio recording devices, such as the Zoom H2n recorder. To mitigate this issue, an SDHC card extension cable can be used. However, this extension cable has implications. For example, with the H2n recorder, the cable may obstruct access to the tripod mount and make it challenging to mount the device securely. Other Zoom recorders like the H4n Pro, H5, and H6, which have the card slot located away from the tripod mount, may be more suitable options in this case.
 
-- Developing a Node.js app for seamless file management and access
+1. Implication of SDHC Card Extension Cable: When using an SDHC card extension cable, it is essential to consider the specific device and its design. For example, with the H2n recorder, the flap that closes the SDHC card slot must remain open to accommodate the cable. This may block access to the tripod mount and make it difficult to mount the H2n on a tripod. It is important to assess the compatibility and practicality of using an extension cable based on the device's physical layout and intended usage.
 
-By sharing this project on GitHub, I aim to provide a resource that can benefit musicians and enthusiasts who seek a wireless solution for recording and managing their performances. Feel free to explore the code and documentation, and adapt it to your own musical endeavors.
+2. Versatility of Deployment: While this project specifically utilizes a Raspberry Pi 4, it is not limited to that platform alone. The code can be deployed on various devices, including old laptops, netbooks, or any system capable of running Node.js with access to two network interfaces. One of the interfaces should be wireless to connect to the ezShare SDHC card. This flexibility allows you to adapt the code to your available resources and choose the most suitable device for your needs.
 
-Note that the project is based on the information available as of March 2023, and there may be updates or alternative solutions since then.
+3. File Compatibility: The code has the ability to retrieve any file from the ezShare SDHC card, not just limited to .wav files. It provides the flexibility to grab any file available on the card, allowing you to download and work with various file formats according to your requirements.
+
+Understanding these key learnings and limitations will help you navigate the usage of the ezShare SDHC card and ensure a successful implementation of the code. Consider the implications of using an SDHC card extension cable, explore device compatibility, and leverage the versatility of the code to handle various file types for a more tailored experience.
 
 ## Code Functionality
 
@@ -58,6 +60,14 @@ The provided code (app.js) allows you to wirelessly download files from an ezSha
 
 This code allows you to automate the retrieval of files from an ezShare SDHC card, making it easier to access and manage your files wirelessly. You can customize the code by adjusting the base URL, URL path, and output directory to fit your specific requirements.
 
+# Feature Updates (Planned)
+
+In future updates, we plan to enhance the functionality of the code (app.js) to include the ability to save dates and encode them into the downloaded files. This will provide additional context and organization for the downloaded files. Here's an overview of the planned feature updates:
+
+Date Saving: We will introduce a mechanism to capture the current date when downloading each file from the ezShare SDHC card. This will ensure that the date of each downloaded file is recorded accurately.
+
+Encoding into File Names: Once the date is captured, we will incorporate it into the file names during the downloading process. This encoding will enable better organization and easy identification of files based on their respective dates.
+
 ## Installation
 
 To use this code on your Raspberry Pi, follow the steps below:
@@ -66,7 +76,7 @@ To use this code on your Raspberry Pi, follow the steps below:
 
 2. Clone the GitHub repository by running the following command in the terminal:
 
-## Bash code snippet
+### Bash code snippet
 
     git clone <repository-url>
 
@@ -74,7 +84,7 @@ Replace <repository-url> with the URL of the GitHub repository where this code i
 
 3. Change into the project directory:
 
-## Bash code snippet
+### Bash code snippet
 
     cd <project-directory>
 
@@ -82,7 +92,7 @@ Replace <project-directory> with the name of the project directory.
 
 4. Install the project dependencies by running the following command:
 
-## Bash code snippet
+### Bash code snippet
 
     npm install
 
@@ -98,7 +108,7 @@ This command will download and install the required dependencies, including http
 
 7. Test the script by running the following command:
 
-## Bash code snippet
+### Bash code snippet
 
     node app.js
 
@@ -114,7 +124,7 @@ To add the file downloading script as a cron job on your Raspberry Pi, follow th
 
 2. Run the following command to edit the cron table:
 
-## Bash code snippet
+### Bash code snippet
 
     crontab -e
     If prompted, choose the text editor you are comfortable with (e.g., nano, vim).
