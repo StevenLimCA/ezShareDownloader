@@ -22,7 +22,8 @@ The project's code and documentation can be found on this GitHub repository, pro
 
 # Requirements
 
-<img src="./ezshare.png" alt="Image" width="200" height="200">
+<img src="./ezshare.png" alt="ezshare sdhc card" width="200" height="200">
+<img src="./sdhcext.png" alt="sdhc card extension cable" width="200" height="200">
 Before using the code and working with the ezShare SDHC card, certain requirements must be met. Here are the key requirements and devices needed:
 
 - **ezShare SDHC Card**: Obtain an ezShare SDHC card, which provides wireless functionality for file transfer. The card should be compatible with the devices you intend to use it with. It is recommended to acquire a genuine and reliable ezShare SDHC card to ensure optimal performance.
