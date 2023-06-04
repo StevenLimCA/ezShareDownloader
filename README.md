@@ -1,11 +1,12 @@
 ## Table of Contents
 
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Requirements](#requirements)
-4. [Key Learnings & Limitations](#key-learnings--limitations)
-5. [Implications of Using an SDHC Card Extension Cable](#implications-of-using-an-sdhc-card-extension-cable)
-6. [Device Compatibility](#device-compatibility)
+1. [Project Description](#project-description)
+2. [Requirements](#requirements)
+3. [Key Learnings & Limitations](#key-learnings--limitations)
+4. [Code Functionality](#code-functionality)
+5. [Feature Updates (Planned)](#feature-updates-planned)
+6. [Installation](#installation)
+   - [Setting up a Cron Job](#setting-up-a-cron-job)
 7. [Acknowledgements](#acknowledgements)
 
 # Project Description
