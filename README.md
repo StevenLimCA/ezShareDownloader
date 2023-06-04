@@ -22,7 +22,7 @@ Limitation: Lack of HTTP POST Route: The ezShare card does not offer an HTTP POS
 
 Limitation: Interference with Audio Recording Devices: The ezShare Wifi SDHC card may cause interference when inserted into certain audio recording devices, such as the Zoom H2n recorder. To mitigate this issue, an SDHC card extension cable can be used. However, this extension cable has implications. For example, with the H2n recorder, the cable may obstruct access to the tripod mount and make it challenging to mount the device securely. Other Zoom recorders like the H4n Pro, H5, and H6, which have the card slot located away from the tripod mount, may be more suitable options in this case.
 
-    - Implication of SDHC Card Extension Cable: When using an SDHC card extension cable, it is essential to consider the specific device and its design. For example, with the H2n recorder, the flap that closes the SDHC card slot must remain open to accommodate the cable. This may block access to the tripod mount and make it difficult to mount the H2n on a tripod. It is important to assess the compatibility and practicality of using an extension cable based on the device's physical layout and intended usage.
+- Implication of SDHC Card Extension Cable: When using an SDHC card extension cable, it is essential to consider the specific device and its design. For example, with the H2n recorder, the flap that closes the SDHC card slot must remain open to accommodate the cable. This may block access to the tripod mount and make it difficult to mount the H2n on a tripod. It is important to assess the compatibility and practicality of using an extension cable based on the device's physical layout and intended usage.
 
 Versatility of Deployment: While this project specifically utilizes a Raspberry Pi 4, it is not limited to that platform alone. The code can be deployed on various devices, including old laptops, netbooks, or any system capable of running Node.js with access to two network interfaces. One of the interfaces should be wireless to connect to the ezShare SDHC card. This flexibility allows you to adapt the code to your available resources and choose the most suitable device for your needs.
 
@@ -78,23 +78,17 @@ To use this code on your Raspberry Pi, follow the steps below:
 
 2. Clone the GitHub repository by running the following command in the terminal:
 
-   ### Bash code snippet
-
    git clone <repository-url>
 
 Replace <repository-url> with the URL of the GitHub repository where this code is located.
 
 3. Change into the project directory:
 
-   ### Bash code snippet
-
    cd <project-directory>
 
 Replace <project-directory> with the name of the project directory.
 
 4. Install the project dependencies by running the following command:
-
-   ### Bash code snippet
 
    npm install
 
@@ -110,7 +104,6 @@ This command will download and install the required dependencies, including http
 
 7. Test the script by running the following command:
 
-   [Bash]
    node app.js
 
 This will initiate the download process and display the progress and status of each downloaded file.
@@ -125,14 +118,12 @@ To add the file downloading script as a cron job on your Raspberry Pi, follow th
 
 2. Run the following command to edit the cron table:
 
-   [Bash]
    crontab -e
 
 If prompted, choose the text editor you are comfortable with (e.g., nano, vim).
 
 In the cron table, add the following line to schedule the script execution:
 
-    [Bash]
     */15 * * * * cd /path/to/project && node app.js >> /path/to/logfile.log 2>&1
 
 Replace /path/to/project with the absolute path to the project directory where the app.js file is located. Additionally, specify /path/to/logfile.log to set the path and filename for the log file where script output will be saved.

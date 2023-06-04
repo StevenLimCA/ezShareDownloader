@@ -125,7 +125,7 @@ const getDirListFromHtml = (html) => {
   const retrieveHtml = cheerio.load(html);
   const preElement = retrieveHtml("pre");
   const preTextArr = preElement.first().text().split("\n");
-  console.log(preTextArr);
+  // console.log(preTextArr);
 
   const entries = { dirs: [], files: [] };
 
