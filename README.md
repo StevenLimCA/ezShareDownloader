@@ -27,7 +27,7 @@ Before using the code and working with the ezShare SDHC card, certain requiremen
 
 - **ezShare SDHC Card**: Obtain an ezShare SDHC card, which provides wireless functionality for file transfer. The card should be compatible with the devices you intend to use it with. It is recommended to acquire a genuine and reliable ezShare SDHC card to ensure optimal performance.
 
-<img src="./ezshare.png" alt="ezshare sdhc card" width="200" height="200">
+<img src="./img/ezshare.png" alt="ezshare sdhc card" width="200" height="200">
 
 - **Device with Wireless Capability**: You will need a device capable of connecting to the ezShare SDHC card wirelessly. This device can be a Raspberry Pi, an old laptop, a netbook, or any other system that supports Node.js and has access to two network interfaces—one wired (Ethernet) and one wireless (Wi-Fi).
 
@@ -35,7 +35,7 @@ Before using the code and working with the ezShare SDHC card, certain requiremen
 
 - SDHC Card Extension Cable (Optional): If you plan to use the ezShare SDHC card with certain audio recording devices prone to interference, such as the Zoom H2n, you may need an SDHC card extension cable. This cable allows you to move the ezShare card away from the device while still maintaining wireless access. However, be aware that using the extension cable may have implications on the device's physical accessibility, such as blocking the tripod mount or hindering the device's ease of use.
 
-<img src="./sdhcext.png" alt="sdhc card extension cable" width="200" height="200">
+<img src="./img/sdhcext.png" alt="sdhc card extension cable" width="200" height="200">
 
 - **Node.js and npm**: Ensure that Node.js and npm (Node Package Manager) are installed on the device you plan to use. These tools are necessary for running the Node.js code and managing the project's dependencies.
 

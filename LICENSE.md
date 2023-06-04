@@ -1,5 +1,5 @@
-![CC](cc_icon_white_x2.png)
-![Attribution](attribution_icon_white_x2.png) ![nc](nc_white_x2.png)
+![CC](./img/cc_icon_white_x2.png)
+![Attribution](./img/attribution_icon_white_x2.png) ![nc](./img/nc_white_x2.png)
 
 # Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
 
