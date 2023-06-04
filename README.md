@@ -6,9 +6,9 @@ This project was developed with the aim of providing a convenient solution for r
 
 The project was born out of the need for a wireless method to download .wav files from a zoom recorder without having to remove the SDHC card after every performance. After researching available options in March 2023, such as Toshiba FlashAir and axGear Wireless SDHC card, it became clear that these solutions were either discontinued or had unfavorable reviews. Eventually, the ezShare wireless SDHC card was chosen, despite some limitations.
 
-One of the main challenges was that the ezShare SDHC card only supported ADHOC wireless functionality, which required constantly switching between the ezShare Wi-Fi SSID and home Wi-Fi SSID using a smartphone or Wi-Fi capable device to retrieve recorded performances. Furthermore, upon testing, I found that the wifi card interfered with the audio recording device so a SDHC Card extension cable was purchased to move the EZShare card away from the recording device, effectively preventing interference.This process proved to be inconvenient and time-consuming.
+One of the main challenges was that the ezShare SDHC card only supported ADHOC wireless functionality, which required constantly switching between the ezShare Wi-Fi SSID and home Wi-Fi SSID using a smartphone or Wi-Fi capable device to retrieve recorded performances. This process proved to be inconvenient and time-consuming.
 
-To overcome these challenges, a Raspberry Pi 4 was utilized, taking advantage of its wired connection (eth0) to the home network and its wireless functionality (wlan0) to connect to the ezShare card. A Node.js app was then created to sync the files from the ezShare internal website to the Raspberry Pi, enabling easy access to the recordings through the home network.
+To overcome these challenges, a Raspberry Pi 4 was utilized, taking advantage of its wired connection (eth0) to the home network and its wireless functionality (wlan0) to connect to the ezShare card. A Node.js app was then created to sync the files from the ezShare internal website to the Raspberry Pi, enabling easy access to the recordings through the home network. Furthermore, upon testing, I found that the wifi card interfered with the audio recording device so a SDHC Card extension cable was purchased to move the EZShare card away from the recording device, effectively preventing interference.
 
 The project's code and documentation can be found on this GitHub repository, providing a comprehensive solution for wireless recording and file management.
 
@@ -25,6 +25,38 @@ Throughout the development of this project, several valuable insights were gaine
 By sharing this project on GitHub, I aim to provide a resource that can benefit musicians and enthusiasts who seek a wireless solution for recording and managing their performances. Feel free to explore the code and documentation, and adapt it to your own musical endeavors.
 
 Note that the project is based on the information available as of March 2023, and there may be updates or alternative solutions since then.
+
+## Code Functionality
+
+The provided code (app.js) allows you to wirelessly download files from an ezShare SDHC card using Node.js. It automates the process of retrieving files from the card and storing them on a local machine. Here's an explanation of the code's functionality:
+
+1. The code uses the http module to make HTTP requests, fs module for file system operations, and cheerio module for HTML parsing.
+
+2. The baseUrl variable defines the base URL of the ezShare card, and the urlPath variable specifies the path to access the files on the card.
+
+3. The outputDir variable determines the directory where the downloaded files will be stored on your local machine.
+
+4. The prepareDownloadFile function is responsible for downloading individual files. It takes an object containing the file URL (url) and the desired file name (fileName).
+
+5. The code checks if the output directory exists and creates it if it doesn't.
+
+6. The getFileSize function sends a HEAD request to retrieve the file size of a given URL.
+
+7. The downloadFile function downloads a file from a given URL and saves it to the specified destination.
+
+8. The getHtmlInfo function makes an HTTP request to the ezShare card and retrieves the HTML information from the specified URL and path.
+
+9. The getDirListFromHtml function parses the HTML data and extracts a list of directories and files available on the ezShare card.
+
+10. The getFileStructure function recursively fetches the file structure from directories and subdirectories, storing the files in an array.
+
+11. The downloadDirPathParseOutDirAndFileList function combines HTML retrieval and parsing to get the file structure from a specific directory path.
+
+12. The getAllFiles function initializes the file downloading process by fetching the file structure from the root directory (dir?dir=A:) and downloading all the files.
+
+13. Lastly, the getAllFiles function is called to initiate the file downloading process.
+
+This code allows you to automate the retrieval of files from an ezShare SDHC card, making it easier to access and manage your files wirelessly. You can customize the code by adjusting the base URL, URL path, and output directory to fit your specific requirements.
 
 ## Installation
 
