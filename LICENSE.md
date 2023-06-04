@@ -1,4 +1,11 @@
-cc logo
+<head>
+  <style>
+    body {
+      background-color: royalblue;
+    }
+  </style>
+</head>
+![CC](./cc_icon_white_x2.png)![Attribution](./attribution_icon_white_x2.png) ![nc](./nc_white_x2.png)
 
 # Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
 
