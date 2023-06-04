@@ -110,8 +110,7 @@ This command will download and install the required dependencies, including http
 
 7. Test the script by running the following command:
 
-   ### Bash code snippet
-
+   [Bash]
    node app.js
 
 This will initiate the download process and display the progress and status of each downloaded file.
@@ -126,16 +125,14 @@ To add the file downloading script as a cron job on your Raspberry Pi, follow th
 
 2. Run the following command to edit the cron table:
 
-   ### Bash code snippet
-
+   [Bash]
    crontab -e
 
 If prompted, choose the text editor you are comfortable with (e.g., nano, vim).
 
 In the cron table, add the following line to schedule the script execution:
 
-    ### Bash code snippet
-
+    [Bash]
     */15 * * * * cd /path/to/project && node app.js >> /path/to/logfile.log 2>&1
 
 Replace /path/to/project with the absolute path to the project directory where the app.js file is located. Additionally, specify /path/to/logfile.log to set the path and filename for the log file where script output will be saved.
