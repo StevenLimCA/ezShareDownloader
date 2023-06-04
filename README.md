@@ -161,7 +161,7 @@ If prompted, choose the text editor you are comfortable with (e.g., nano, vim).
 
 In the cron table, add the following line to schedule the script execution:
 
-    `*/15 * * * * cd /path/to/project && node app.js >> /path/to/logfile.log 2>&1`
+    */15 * * * * cd /path/to/project && node app.js >> /path/to/logfile.log 2>&1
 
 Replace /path/to/project with the absolute path to the project directory where the app.js file is located. Additionally, specify /path/to/logfile.log to set the path and filename for the log file where script output will be saved.
 
