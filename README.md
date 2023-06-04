@@ -15,15 +15,15 @@ The project's code and documentation can be found on this GitHub repository, pro
 <img src="./ezshare.png" alt="Image" width="200" height="200">
 Before using the code and working with the ezShare SDHC card, certain requirements must be met. Here are the key requirements and devices needed:
 
-ezShare SDHC Card: Obtain an ezShare SDHC card, which provides wireless functionality for file transfer. The card should be compatible with the devices you intend to use it with. It is recommended to acquire a genuine and reliable ezShare SDHC card to ensure optimal performance.
+- **ezShare SDHC Card**: Obtain an ezShare SDHC card, which provides wireless functionality for file transfer. The card should be compatible with the devices you intend to use it with. It is recommended to acquire a genuine and reliable ezShare SDHC card to ensure optimal performance.
 
-Device with Wireless Capability: You will need a device capable of connecting to the ezShare SDHC card wirelessly. This device can be a Raspberry Pi, an old laptop, a netbook, or any other system that supports Node.js and has access to two network interfaces—one wired (Ethernet) and one wireless (Wi-Fi).
+- **Device with Wireless Capability**: You will need a device capable of connecting to the ezShare SDHC card wirelessly. This device can be a Raspberry Pi, an old laptop, a netbook, or any other system that supports Node.js and has access to two network interfaces—one wired (Ethernet) and one wireless (Wi-Fi).
 
-Raspberry Pi (Optional): If you choose to use a Raspberry Pi, ensure you have a Raspberry Pi model (such as Raspberry Pi 4) and necessary peripherals like power supply, microSD card, and Ethernet cable.
+- Raspberry Pi (Optional): If you choose to use a Raspberry Pi, ensure you have a Raspberry Pi model (such as Raspberry Pi 4) and necessary peripherals like power supply, microSD card, and Ethernet cable.
 
-SDHC Card Extension Cable (Optional): If you plan to use the ezShare SDHC card with certain audio recording devices prone to interference, such as the Zoom H2n, you may need an SDHC card extension cable. This cable allows you to move the ezShare card away from the device while still maintaining wireless access. However, be aware that using the extension cable may have implications on the device's physical accessibility, such as blocking the tripod mount or hindering the device's ease of use.
+- SDHC Card Extension Cable (Optional): If you plan to use the ezShare SDHC card with certain audio recording devices prone to interference, such as the Zoom H2n, you may need an SDHC card extension cable. This cable allows you to move the ezShare card away from the device while still maintaining wireless access. However, be aware that using the extension cable may have implications on the device's physical accessibility, such as blocking the tripod mount or hindering the device's ease of use.
 
-Node.js and npm: Ensure that Node.js and npm (Node Package Manager) are installed on the device you plan to use. These tools are necessary for running the Node.js code and managing the project's dependencies.
+- **Node.js and npm**: Ensure that Node.js and npm (Node Package Manager) are installed on the device you plan to use. These tools are necessary for running the Node.js code and managing the project's dependencies.
 
 By meeting these requirements and having the necessary devices, you can proceed with setting up the code and utilizing the ezShare SDHC card for wireless file transfer. Remember to consider any optional components like the SDHC card extension cable based on the specific devices you intend to use and their compatibility.
 
@@ -144,10 +144,7 @@ To add the file downloading script as a cron job on your Raspberry Pi, follow th
 If prompted, choose the text editor you are comfortable with (e.g., nano, vim).
 
 In the cron table, add the following line to schedule the script execution:
-
-    ```Bash
-    */15 * * * * cd /path/to/project && node app.js >> /path/to/logfile.log 2>&1
-    ```
+`*/15 * * * * cd /path/to/project && node app.js >> /path/to/logfile.log 2>&1`
 
 Replace /path/to/project with the absolute path to the project directory where the app.js file is located. Additionally, specify /path/to/logfile.log to set the path and filename for the log file where script output will be saved.
 
