@@ -1,6 +1,4 @@
-## Project Description
-
-![EZshare Card](ezshare.png)
+# Project Description
 
 This project was developed with the aim of providing a convenient solution for recording and sharing musical performances. The motivation behind it was a passion for music and the desire to improve performance through self-analysis and feedback from a coach.
 
@@ -12,7 +10,11 @@ To overcome these challenges, a Raspberry Pi 4 was utilized, taking advantage of
 
 The project's code and documentation can be found on this GitHub repository, providing a comprehensive solution for wireless recording and file management.
 
-## Key Learnings & Limitations
+# Requirements
+
+<img src="./ezshare.png" alt="Image" width="200" height="200">
+
+# Key Learnings & Limitations
 
 During the development and usage of the code and the ezShare SDHC card, several key learnings and limitations have been identified. These provide important insights and considerations when working with the card and implementing the code. Here are the key learnings and limitations:
 
@@ -20,15 +22,15 @@ Limitation: Lack of HTTP POST Route: The ezShare card does not offer an HTTP POS
 
 Limitation: Interference with Audio Recording Devices: The ezShare Wifi SDHC card may cause interference when inserted into certain audio recording devices, such as the Zoom H2n recorder. To mitigate this issue, an SDHC card extension cable can be used. However, this extension cable has implications. For example, with the H2n recorder, the cable may obstruct access to the tripod mount and make it challenging to mount the device securely. Other Zoom recorders like the H4n Pro, H5, and H6, which have the card slot located away from the tripod mount, may be more suitable options in this case.
 
-1. Implication of SDHC Card Extension Cable: When using an SDHC card extension cable, it is essential to consider the specific device and its design. For example, with the H2n recorder, the flap that closes the SDHC card slot must remain open to accommodate the cable. This may block access to the tripod mount and make it difficult to mount the H2n on a tripod. It is important to assess the compatibility and practicality of using an extension cable based on the device's physical layout and intended usage.
+    - Implication of SDHC Card Extension Cable: When using an SDHC card extension cable, it is essential to consider the specific device and its design. For example, with the H2n recorder, the flap that closes the SDHC card slot must remain open to accommodate the cable. This may block access to the tripod mount and make it difficult to mount the H2n on a tripod. It is important to assess the compatibility and practicality of using an extension cable based on the device's physical layout and intended usage.
 
-2. Versatility of Deployment: While this project specifically utilizes a Raspberry Pi 4, it is not limited to that platform alone. The code can be deployed on various devices, including old laptops, netbooks, or any system capable of running Node.js with access to two network interfaces. One of the interfaces should be wireless to connect to the ezShare SDHC card. This flexibility allows you to adapt the code to your available resources and choose the most suitable device for your needs.
+Versatility of Deployment: While this project specifically utilizes a Raspberry Pi 4, it is not limited to that platform alone. The code can be deployed on various devices, including old laptops, netbooks, or any system capable of running Node.js with access to two network interfaces. One of the interfaces should be wireless to connect to the ezShare SDHC card. This flexibility allows you to adapt the code to your available resources and choose the most suitable device for your needs.
 
-3. File Compatibility: The code has the ability to retrieve any file from the ezShare SDHC card, not just limited to .wav files. It provides the flexibility to grab any file available on the card, allowing you to download and work with various file formats according to your requirements.
+File Compatibility: The code has the ability to retrieve any file from the ezShare SDHC card, not just limited to .wav files. It provides the flexibility to grab any file available on the card, allowing you to download and work with various file formats according to your requirements.
 
 Understanding these key learnings and limitations will help you navigate the usage of the ezShare SDHC card and ensure a successful implementation of the code. Consider the implications of using an SDHC card extension cable, explore device compatibility, and leverage the versatility of the code to handle various file types for a more tailored experience.
 
-## Code Functionality
+# Code Functionality
 
 The provided code (app.js) allows you to wirelessly download files from an ezShare SDHC card using Node.js. It automates the process of retrieving files from the card and storing them on a local machine. Here's an explanation of the code's functionality:
 
@@ -68,7 +70,7 @@ Date Saving: We will introduce a mechanism to capture the current date when down
 
 Encoding into File Names: Once the date is captured, we will incorporate it into the file names during the downloading process. This encoding will enable better organization and easy identification of files based on their respective dates.
 
-## Installation
+# Installation
 
 To use this code on your Raspberry Pi, follow the steps below:
 
@@ -76,25 +78,25 @@ To use this code on your Raspberry Pi, follow the steps below:
 
 2. Clone the GitHub repository by running the following command in the terminal:
 
-### Bash code snippet
+   ### Bash code snippet
 
-    git clone <repository-url>
+   git clone <repository-url>
 
 Replace <repository-url> with the URL of the GitHub repository where this code is located.
 
 3. Change into the project directory:
 
-### Bash code snippet
+   ### Bash code snippet
 
-    cd <project-directory>
+   cd <project-directory>
 
 Replace <project-directory> with the name of the project directory.
 
 4. Install the project dependencies by running the following command:
 
-### Bash code snippet
+   ### Bash code snippet
 
-    npm install
+   npm install
 
 This command will download and install the required dependencies, including http, fs, and cheerio.
 
@@ -108,15 +110,15 @@ This command will download and install the required dependencies, including http
 
 7. Test the script by running the following command:
 
-### Bash code snippet
+   ### Bash code snippet
 
-    node app.js
+   node app.js
 
 This will initiate the download process and display the progress and status of each downloaded file.
 
 8. If the script runs successfully, you can proceed to set up a cron job to automate the file downloading.
 
-# Setting up a Cron Job
+## Setting up a Cron Job
 
 To add the file downloading script as a cron job on your Raspberry Pi, follow these steps:
 
@@ -124,14 +126,15 @@ To add the file downloading script as a cron job on your Raspberry Pi, follow th
 
 2. Run the following command to edit the cron table:
 
-### Bash code snippet
+   ### Bash code snippet
 
-    crontab -e
-    If prompted, choose the text editor you are comfortable with (e.g., nano, vim).
+   crontab -e
+
+If prompted, choose the text editor you are comfortable with (e.g., nano, vim).
 
 In the cron table, add the following line to schedule the script execution:
 
-## Bash code snippet
+    ### Bash code snippet
 
     */15 * * * * cd /path/to/project && node app.js >> /path/to/logfile.log 2>&1
 
@@ -144,3 +147,9 @@ The above line schedules the script to run every 15 minutes. You can adjust the 
 The script will run automatically based on the cron schedule, downloading the files from the ezShare card and storing them in the designated output directory. You can check the log file for any output or error messages generated during the execution of the script.
 
 Please note that you may need to adjust the code and cron schedule to fit your specific requirements.
+
+# Acknowledgements
+
+Special thanks go to Steven Chui for his valuable contributions to the code and project. Steven Chui's expertise and dedication significantly enhanced the functionality and efficiency of the solution. His insights and efforts were instrumental in overcoming challenges and improving the overall performance of the project.
+
+We extend our sincere gratitude to Steven Chui for his commitment, collaboration, and invaluable contributions. His dedication and expertise have been instrumental in making this project a success.
