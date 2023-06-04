@@ -46,9 +46,10 @@ Replace <project-directory> with the name of the project directory.
 
 4. Install the project dependencies by running the following command:
 
-bash
-Copy code
-npm install
+## bash
+
+    npm install
+
 This command will download and install the required dependencies, including http, fs, and cheerio.
 
 5. Open the app.js file in a text editor to configure the necessary parameters:
@@ -64,7 +65,8 @@ This command will download and install the required dependencies, including http
 ## bash
 
     node app.js
-    This will initiate the download process and display the progress and status of each downloaded file.
+
+This will initiate the download process and display the progress and status of each downloaded file.
 
 8. If the script runs successfully, you can proceed to set up a cron job to automate the file downloading.
 
