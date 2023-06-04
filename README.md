@@ -1,3 +1,13 @@
+## Table of Contents
+
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Requirements](#requirements)
+4. [Key Learnings & Limitations](#key-learnings--limitations)
+5. [Implications of Using an SDHC Card Extension Cable](#implications-of-using-an-sdhc-card-extension-cable)
+6. [Device Compatibility](#device-compatibility)
+7. [Acknowledgements](#acknowledgements)
+
 # Project Description
 
 This project was developed with the aim of providing a convenient solution for recording and sharing musical performances. The motivation behind it was a passion for music and the desire to improve performance through self-analysis and feedback from a coach.
@@ -31,15 +41,15 @@ By meeting these requirements and having the necessary devices, you can proceed 
 
 During the development and usage of the code and the ezShare SDHC card, several key learnings and limitations have been identified. These provide important insights and considerations when working with the card and implementing the code. Here are the key learnings and limitations:
 
-Limitation: Lack of HTTP POST Route: The ezShare card does not offer an HTTP POST route, which means that the code in its current form cannot directly upload files to the card. It is limited to downloading files from the card only.
+**Limitation**: Lack of HTTP POST Route: The ezShare card does not offer an HTTP POST route, which means that the code in its current form cannot directly upload files to the card. It is limited to downloading files from the card only.
 
-Limitation: Interference with Audio Recording Devices: The ezShare Wifi SDHC card may cause interference when inserted into certain audio recording devices, such as the Zoom H2n recorder. To mitigate this issue, an SDHC card extension cable can be used. However, this extension cable has implications. For example, with the H2n recorder, the cable may obstruct access to the tripod mount and make it challenging to mount the device securely. Other Zoom recorders like the H4n Pro, H5, and H6, which have the card slot located away from the tripod mount, may be more suitable options in this case.
+**Limitation**: Interference with Audio Recording Devices: The ezShare Wifi SDHC card may cause interference when inserted into certain audio recording devices, such as the Zoom H2n recorder. To mitigate this issue, an SDHC card extension cable can be used. However, this extension cable has implications. For example, with the H2n recorder, the cable may obstruct access to the tripod mount and make it challenging to mount the device securely. Other Zoom recorders like the H4n Pro, H5, and H6, which have the card slot located away from the tripod mount, may be more suitable options in this case.
 
 - Implication of SDHC Card Extension Cable: When using an SDHC card extension cable, it is essential to consider the specific device and its design. For example, with the H2n recorder, the flap that closes the SDHC card slot must remain open to accommodate the cable. This may block access to the tripod mount and make it difficult to mount the H2n on a tripod. It is important to assess the compatibility and practicality of using an extension cable based on the device's physical layout and intended usage.
 
-Versatility of Deployment: While this project specifically utilizes a Raspberry Pi 4, it is not limited to that platform alone. The code can be deployed on various devices, including old laptops, netbooks, or any system capable of running Node.js with access to two network interfaces. One of the interfaces should be wireless to connect to the ezShare SDHC card. This flexibility allows you to adapt the code to your available resources and choose the most suitable device for your needs.
+**Versatility of Deployment**: While this project specifically utilizes a Raspberry Pi 4, it is not limited to that platform alone. The code can be deployed on various devices, including old laptops, netbooks, or any system capable of running Node.js with access to two network interfaces. One of the interfaces should be wireless to connect to the ezShare SDHC card. This flexibility allows you to adapt the code to your available resources and choose the most suitable device for your needs.
 
-File Compatibility: The code has the ability to retrieve any file from the ezShare SDHC card, not just limited to .wav files. It provides the flexibility to grab any file available on the card, allowing you to download and work with various file formats according to your requirements.
+**File Compatibility**: The code has the ability to retrieve any file from the ezShare SDHC card, not just limited to .wav files. It provides the flexibility to grab any file available on the card, allowing you to download and work with various file formats according to your requirements.
 
 Understanding these key learnings and limitations will help you navigate the usage of the ezShare SDHC card and ensure a successful implementation of the code. Consider the implications of using an SDHC card extension cable, explore device compatibility, and leverage the versatility of the code to handle various file types for a more tailored experience.
 
