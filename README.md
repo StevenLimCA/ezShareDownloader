@@ -77,11 +77,11 @@ This code allows you to automate the retrieval of files from an ezShare SDHC car
 
 # Feature Updates (Planned)
 
-In future updates, we plan to enhance the functionality of the code (app.js) to include the ability to save dates and encode them into the downloaded files. This will provide additional context and organization for the downloaded files. Here's an overview of the planned feature updates:
+In future updates, I plan to enhance the functionality of the code (app.js) to include the ability to save dates and encode them into the downloaded files. This will provide additional context and organization for the downloaded files. Here's an overview of the planned feature updates:
 
-Date Saving: We will introduce a mechanism to capture the current date when downloading each file from the ezShare SDHC card. This will ensure that the date of each downloaded file is recorded accurately.
+Date Saving: I will introduce a mechanism to capture the current date when downloading each file from the ezShare SDHC card. This will ensure that the date of each downloaded file is recorded accurately.
 
-Encoding into File Names: Once the date is captured, we will incorporate it into the file names during the downloading process. This encoding will enable better organization and easy identification of files based on their respective dates.
+Encoding into File Names: Once the date is captured, I will incorporate it into the file names during the downloading process. This encoding will enable better organization and easy identification of files based on their respective dates.
 
 # Installation
 
@@ -144,6 +144,7 @@ To add the file downloading script as a cron job on your Raspberry Pi, follow th
 If prompted, choose the text editor you are comfortable with (e.g., nano, vim).
 
 In the cron table, add the following line to schedule the script execution:
+
 `*/15 * * * * cd /path/to/project && node app.js >> /path/to/logfile.log 2>&1`
 
 Replace /path/to/project with the absolute path to the project directory where the app.js file is located. Additionally, specify /path/to/logfile.log to set the path and filename for the log file where script output will be saved.
@@ -160,4 +161,4 @@ Please note that you may need to adjust the code and cron schedule to fit your s
 
 Special thanks go to Steven Chui for his valuable contributions to the code and project. Steven Chui's expertise and dedication significantly enhanced the functionality and efficiency of the solution. His insights and efforts were instrumental in overcoming challenges and improving the overall performance of the project.
 
-We extend our sincere gratitude to Steven Chui for his commitment, collaboration, and invaluable contributions. His dedication and expertise have been instrumental in making this project a success.
+I extend my sincere gratitude to Steven Chui for his commitment, collaboration, and invaluable contributions. His dedication and expertise have been instrumental in making this project a success.
