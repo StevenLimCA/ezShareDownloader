@@ -1,12 +1,11 @@
 ## Table of Contents
 
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Requirements](#requirements)
-4. [Key Learnings & Limitations](#key-learnings--limitations)
-5. [Implications of Using an SDHC Card Extension Cable](#implications-of-using-an-sdhc-card-extension-cable)
-6. [Device Compatibility](#device-compatibility)
-7. [Acknowledgements](#acknowledgements)
+1. [Project Description](#project-description)
+2. [Requirements](#requirements)
+3. [Key Learnings & Limitations](#key-learnings--limitations)
+4. [Implications of Using an SDHC Card Extension Cable](#implications-of-using-an-sdhc-card-extension-cable)
+5. [Device Compatibility](#device-compatibility)
+6. [Acknowledgements](#acknowledgements)
 
 ## Project Description
 
@@ -74,7 +73,6 @@ Please check the specifications and documentation of your specific device to ens
 This project would not have been possible without the valuable guidance and support of the following individuals:
 
 - Steven Chui
-- [Name of Mentor or Advisor]
 
 Their expertise and insights were instrumental in the successful development and implementation of this project.
 
