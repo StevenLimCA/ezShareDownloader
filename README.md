@@ -14,11 +14,11 @@ The project's code and documentation can be found on this GitHub repository, pro
 
 Throughout the development of this project, several valuable insights were gained:
 
-# Understanding the limitations and capabilities of different wireless SDHC cards
+- Understanding the limitations and capabilities of different wireless SDHC cards
 
-# Leveraging a Raspberry Pi for network connectivity and file synchronization
+- Leveraging a Raspberry Pi for network connectivity and file synchronization
 
-# Developing a Node.js app for seamless file management and access
+- Developing a Node.js app for seamless file management and access
 
 By sharing this project on GitHub, I aim to provide a resource that can benefit musicians and enthusiasts who seek a wireless solution for recording and managing their performances. Feel free to explore the code and documentation, and adapt it to your own musical endeavors.
 
