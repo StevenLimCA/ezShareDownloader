@@ -1,6 +1,6 @@
 ## Project Description
 
-    ![EZshare Card](ezshare.png)
+![EZshare Card](ezshare.png)
 
 This project was developed with the aim of providing a convenient solution for recording and sharing musical performances. The motivation behind it was a passion for music and the desire to improve performance through self-analysis and feedback from a coach.
 
