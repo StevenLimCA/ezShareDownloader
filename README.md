@@ -32,21 +32,23 @@ To use this code on your Raspberry Pi, follow the steps below:
 
 2. Clone the GitHub repository by running the following command in the terminal:
 
-bash
-Copy code
-git clone <repository-url>
+## Bash code snippet
+
+    git clone <repository-url>
+
 Replace <repository-url> with the URL of the GitHub repository where this code is located.
 
 3. Change into the project directory:
 
-bash
-Copy code
-cd <project-directory>
+## Bash code snippet
+
+    cd <project-directory>
+
 Replace <project-directory> with the name of the project directory.
 
 4. Install the project dependencies by running the following command:
 
-## bash
+## Bash code snippet
 
     npm install
 
