@@ -32,7 +32,7 @@ Before using the code and working with the ezShare SDHC card, certain requiremen
 
 - Raspberry Pi (Optional): If you choose to use a Raspberry Pi, ensure you have a Raspberry Pi model (such as Raspberry Pi 4) and necessary peripherals like power supply, microSD card, and Ethernet cable.
 
-  <img src="./sdhcext.png" alt="sdhc card extension cable" width="200" height="200">
+<img src="./sdhcext.png" alt="sdhc card extension cable" width="200" height="200">
 
 - SDHC Card Extension Cable (Optional): If you plan to use the ezShare SDHC card with certain audio recording devices prone to interference, such as the Zoom H2n, you may need an SDHC card extension cable. This cable allows you to move the ezShare card away from the device while still maintaining wireless access. However, be aware that using the extension cable may have implications on the device's physical accessibility, such as blocking the tripod mount or hindering the device's ease of use.
 
