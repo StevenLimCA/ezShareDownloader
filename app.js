@@ -4,14 +4,27 @@ const cheerio = require("cheerio");
 
 // Define the base URL to iterate over
 const baseUrl = "ezshare.card";
-let urlPath = "/dir?dir=A:%5C";
+const rootUrlPath = "dir?dir=A:";
 
 // Define the output directory for downloaded files
-const outputDir = "Documents/dl/downloaded_files";
+const outputDir = "downloaded_files";
+
+// Set a delay
+const delay = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+const convertTimeStringToDate = (timeString) => {
+  const [datePart, timePart] = timeString.split(" ");
+  const [year, month, day] = datePart.split("-");
+  const [hours, minutes, seconds] = timePart.split(":");
+
+  // JavaScript Date constructor expects month to be zero-based, so subtract 1 from the month value
+  return new Date(year, month - 1, day, hours, minutes, seconds);
+};
 
 // Download Files
 const prepareDownloadFile = async ({ url: href, fileName }) => {
-  console.log("Found:", href);
+  console.log("Downloading:", href);
   const filePath = `${outputDir}/${fileName}`;
 
   try {
@@ -28,7 +41,7 @@ if (!fs.existsSync(outputDir)) {
 }
 
 // makes an http request to get the file size of the targeted file
-const getFileSize = (url) => {
+const getFileSize = async (url) => {
   return new Promise((resolve, reject) => {
     http
       .request(url, { method: "HEAD" }, (response) => {
@@ -44,7 +57,7 @@ const getFileSize = (url) => {
       .end();
   });
 };
-// downloads the file
+// this function downloads files, it takes in the url and destination as a parameter
 const downloadFile = (url, dest) => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -55,10 +68,10 @@ const downloadFile = (url, dest) => {
         const localFileSize = fs.statSync(dest).size; // gets local file size
         console.log("Local file size:", localFileSize);
 
-        if (serverFileSize === localFileSize) {
-          // File already exists with the same size, skip the download
+        if (localFileSize === serverFileSize || serverFileSize === 147) {
+          // Local file already exists with the same size or equal to 147, skip the download
           console.log(
-            "File already exists with the same size, skipping download"
+            "A local file with the same name exists that is the same size or higher, skipping download."
           );
           resolve();
           return;
@@ -125,7 +138,6 @@ const getDirListFromHtml = (html) => {
   const retrieveHtml = cheerio.load(html);
   const preElement = retrieveHtml("pre");
   const preTextArr = preElement.first().text().split("\n");
-  // console.log(preTextArr);
 
   const entries = { dirs: [], files: [] };
 
@@ -136,12 +148,14 @@ const getDirListFromHtml = (html) => {
 
     if (isDirectory) {
       //this filters out any . and .. ensuring that it will not recursive go into the previous folder
+
       if (name !== "." && name !== "..") {
         entries.dirs.push({ url: href, fileName: name });
       }
     } else {
       // this filters out any file formats not needed
-      if (!name.endsWith(".hprj" && !name.endsWith(".cfg"))) {
+
+      if (!name.endsWith(".hprj") && !name.endsWith(".CFG")) {
         entries.files.push({ url: href, fileName: name });
       }
     }
@@ -151,6 +165,7 @@ const getDirListFromHtml = (html) => {
 };
 
 // Recursively fetches the file structure from directories and subdirectories
+
 const getFileStructure = async (dir, files) => {
   const listOfFileAndFolders = await downloadDirPathParseOutDirAndFileList(dir);
 
@@ -176,10 +191,12 @@ const downloadDirPathParseOutDirAndFileList = async (path) => {
 };
 
 const getAllFiles = async () => {
-  const mmmyyyfiles = [];
-  await getFileStructure("dir?dir=A:", mmmyyyfiles);
+  const allFiles = [];
+  await getFileStructure(rootUrlPath, allFiles);
 
-  for (const files of mmmyyyfiles) {
+  for (const files of allFiles) {
+    await delay(1500); // one and a half seconds delay to not overload the server
+    console.log("Preparing: " + files);
     await prepareDownloadFile(files);
   }
 };
