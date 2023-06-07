@@ -155,7 +155,7 @@ const getDirListFromHtml = (html) => {
     } else {
       // this filters out any file formats not needed
 
-      if (!name.endsWith(".hprj") && !name.endsWith(".CFG")) {
+      if (!name.endsWith(".hprj") && !name.endsWith(".cfg")) {
         entries.files.push({ url: href, fileName: name });
       }
     }
@@ -194,10 +194,10 @@ const getAllFiles = async () => {
   const allFiles = [];
   await getFileStructure(rootUrlPath, allFiles);
 
-  for (const files of allFiles) {
-    await delay(1500); // one and a half seconds delay to not overload the server
-    console.log("Preparing: " + files);
-    await prepareDownloadFile(files);
+  for (const file of allFiles) {
+    await delay(1000); // one and a half seconds delay to not overload the server
+
+    await prepareDownloadFile(file);
   }
 };
 
